@@ -3,8 +3,8 @@ from owner_pet import Pet, Owner
 
 def test_owner_init():
     """Test Owner class initialization"""
-    owner = Owner("John")
-    assert owner.name == "John"
+    owner = Owner()
+    assert owner.name == "Miriam"
 
 def test_pet_init():
     """Test Pet class initialization"""
@@ -12,7 +12,7 @@ def test_pet_init():
     assert pet.name == "Fido"
     assert pet.pet_type == "dog"
 
-    owner = Owner("Jim")
+    owner = Owner()
     pet = Pet("Clifford", "dog", owner)
     assert pet.owner == owner
 
@@ -44,7 +44,7 @@ def test_pet_has_all():
 
 def test_owner_has_pets():
     """Test Owner class has method pets(), returning all related pets"""
-    owner = Owner("Ben")
+    owner = Owner("chris")
     pet1 = Pet("Fido", "dog", owner)
     pet2 = Pet("Clifford", "dog", owner)
 
@@ -54,7 +54,7 @@ def test_owner_has_pets():
 
 def test_owner_adds_pets():
     """Test Owner class has method add_pet(), validating and adding a pet"""
-    owner = Owner("Ben")
+    owner = Owner()
     pet = Pet("Whiskers", "cat")
     owner.add_pet(pet)
 
@@ -65,7 +65,7 @@ def test_owner_adds_pets():
 
 def test_add_pet_checks_isinstance():
     """Test Owner class instance method add_pet() validates Pet type"""
-    owner = Owner("Jim")
+    owner = Owner("Thomus")
     with pytest.raises(Exception):
         owner.add_pet("Lucky")
 
@@ -73,7 +73,7 @@ def test_add_pet_checks_isinstance():
 
 def test_get_sorted_pets():
     """Test Owner class has method get_sorted_pets, sorting related pets by name"""
-    owner = Owner("John")
+    owner = Owner("Symo")
     pet1 = Pet("Fido", "dog", owner)
     pet2 = Pet("Clifford", "dog", owner)
     pet3 = Pet("Whiskers", "cat", owner)
